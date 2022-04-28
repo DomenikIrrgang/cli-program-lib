@@ -1,0 +1,17 @@
+{
+  "name": "cli-program-lib",
+  "version": "0.0.1",
+  "description": "Library to create a cli program that provides modern utilities like dependency injection and modularity.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Domenik Irrgang",
+  "license": "MIT",
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.6.2"
+  }
+}
