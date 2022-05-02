@@ -7,6 +7,9 @@
   },
   "author": "Domenik Irrgang",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/DomenikIrrgang/cli-program-lib"
+  },
   "dependencies": {
     "reflect-metadata": "^0.1.13"
   },
