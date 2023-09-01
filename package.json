@@ -1,6 +1,6 @@
 {
   "name": "cli-program-lib",
-  "version": "0.0.6",
+  "version": "0.0.13",
   "description": "Library to create a cli program that provides modern utilities like dependency injection and modularity.",
   "scripts": {
     "build": "tsc",

@@ -50,6 +50,6 @@ export class PropertyParser {
     }
 
     public getProfileConfigPath(): string {
-        return this.profile + ".properties"
+        return process.argv[1].replace("dist/index.js", "") + this.profile + ".properties"
     }
 }

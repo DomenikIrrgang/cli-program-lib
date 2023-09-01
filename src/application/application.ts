@@ -6,11 +6,11 @@ export abstract class Application extends ApplicationTemplate {
 
     public run(): void {
         const args = process.argv
-        for (let command of this.getCommands()) {
-            this.logger.debug(command.settings.name)
-            if (command.settings.name === args[2]) {
-                command["execute"](args)
-            }
+        const command = this.findCommand(args[2])
+        if (command !== undefined) {
+            command["execute"](args)
+        } else {
+            this.logger.error("Command '" + args[2] + "' does not exist!")
         }
     }
 
@@ -25,6 +25,12 @@ export abstract class Application extends ApplicationTemplate {
             commands = commands.concat(moduleCommands)
         }
         return commands
+    }
+
+    private findCommand(name: string): CommandTemplate {
+        return this.getCommands().find((command: CommandTemplate) => {
+            return command.settings.name === name
+        })
     }
 
 }

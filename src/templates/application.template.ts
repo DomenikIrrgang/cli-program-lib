@@ -34,13 +34,10 @@ export abstract class ApplicationTemplate {
     }
 
     private printApplicationInfo(): void {
-        this.logger.info("application.name:", this.config.name)
-        this.logger.info("application.profile", this.config.profile)
-        this.logger.info("application.version", this.version)
-        this.logger.info("application.config.repository", this.config.repository)
-        this.logger.info("application.config.version", this.config.version)
-        this.logger.info("application.logging.enabled:", this.config.loggingEnabled)
-        this.logger.info("application.logging.level:", LogLevel[this.config.loggingLevel])
+        this.logger.debug("application.name:", this.config.name)
+        this.logger.debug("application.profile", this.config.profile)
+        this.logger.debug("application.logging.enabled:", this.config.loggingEnabled)
+        this.logger.debug("application.logging.level:", LogLevel[this.config.loggingLevel])
     }
 
 }

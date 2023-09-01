@@ -30,7 +30,7 @@ export class Logger {
     }
 
     private getDebugLoggingMessage(logLevel: LogLevel): string {
-        return `${new Date(Date.now()).toUTCString()} ${this.applicationConfig.name} "<annonymous>"} ${LogLevel[logLevel]}:`
+        return `${new Date(Date.now()).toUTCString()} ${this.applicationConfig.name}} ${LogLevel[logLevel]}:`
     }
 
     public debug(...message: any): void {

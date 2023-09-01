@@ -12,7 +12,7 @@ import { Cast } from "../decorators/cast.decorator"
 export class ApplicationConfig {
 
     @Environment("APPLICATION_NAME")
-    @Config("application.name", "pipeline-lib")
+    @Config("application.name", "cli-program-lib")
     public name: string
 
     @Environment("APPLICATION_LOGGING_ENABLED")
@@ -30,12 +30,6 @@ export class ApplicationConfig {
         }
     })
     public loggingLevel: LogLevel
-
-    @Environment("APPLICATION_CONFIG_REPOSITORY")
-    public repository: string
-
-    @Environment("APPLICATION_CONFIG_VERSION")
-    public version: string
 
     @Environment("APPLICATION_PROFILE", "application")
     public profile: string
