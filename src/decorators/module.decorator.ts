@@ -19,6 +19,7 @@ export interface ModuleSettings {
   errorHandlers?: ClassDefinition<any>[]
   imports?: ClassDefinition<any>[]
   exports?: ClassDefinition<any>[]
-  initializer?: { callback: (... params: any[]) => void, dependencies: ClassDefinition<any>[] }[]
+  initializer?: { callback: (... params: any[]) => void, dependencies: ClassDefinition<any>[] }[],
+  providers: ClassDefinition<any>[],
   injectionContext?: InjectionContext
 }

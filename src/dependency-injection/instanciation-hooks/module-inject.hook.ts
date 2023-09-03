@@ -17,6 +17,7 @@ export class ModuleInjectHook implements PostInstanciationHook {
             moduleInstance.exports = []
             moduleInstance.imports = []
             moduleInstance.errorHandlers = []
+            moduleSettings.providers?.forEach(provider => injectionStep.context.addInjectable(provider))
             moduleSettings.imports?.forEach(module => moduleInstance.imports.push(injectionStep.injector.createInstance(mergeObject(injectionStep, { target: module }))))
             moduleSettings.exports?.forEach(module => moduleInstance.exports.push(injectionStep.injector.createInstance(mergeObject(injectionStep, { target: module }))))
             moduleSettings.errorHandlers?.forEach(errorHandler => moduleInstance.errorHandlers.push(injectionStep.injector.createInstance(mergeObject(injectionStep, { target: errorHandler }))))

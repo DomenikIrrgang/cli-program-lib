@@ -1,6 +1,6 @@
 {
   "name": "cli-program-lib",
-  "version": "0.0.13",
+  "version": "0.0.17",
   "description": "Library to create a cli program that provides modern utilities like dependency injection and modularity.",
   "scripts": {
     "build": "tsc",
@@ -12,10 +12,11 @@
     "url": "https://github.com/DomenikIrrgang/cli-program-lib"
   },
   "dependencies": {
+    "jsonpath": "^1.1.1",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
-    "typescript": "^4.6.2"
+    "@types/jsonpath": "^0.2.0",
+    "@types/node": "^20.5.7"
   }
 }

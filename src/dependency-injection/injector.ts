@@ -10,6 +10,7 @@ import { ConfigHook } from './instanciation-hooks/config.hook'
 import { EnvironmentHook } from './instanciation-hooks/environment-hook'
 import { ErrorHandlerInjectHook } from './instanciation-hooks/error-handler-inject.hook'
 import { InjectHook } from './instanciation-hooks/inject-hook'
+import { JsonHook } from './instanciation-hooks/json-hook'
 import { MapResultHook } from './instanciation-hooks/map-result.hook'
 import { ModuleInjectHook } from './instanciation-hooks/module-inject.hook'
 import { ModuleInjectionContextHook } from './instanciation-hooks/module-injection-context.hook'
@@ -30,6 +31,7 @@ export class Injector {
     protected postInstanciationHooks: PostInstanciationHook[] = [
         new EnvironmentHook(),
         new ConfigHook(),
+        new JsonHook(),
         new CastHook(),
         new InjectHook(),
         new NumberCastHook(),
