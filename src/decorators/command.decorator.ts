@@ -14,6 +14,7 @@ export function isCommand(object: any): boolean {
 }
 
 export interface CommandSettings {
-    name: string
+    name: string,
+    description?: string,
     errorHandlers?: ClassDefinition<any>[]
 }

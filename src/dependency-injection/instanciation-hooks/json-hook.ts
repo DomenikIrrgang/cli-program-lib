@@ -19,8 +19,12 @@ export class JsonHook implements PostInstanciationHook {
             for (const json in jsons) {
                 const jsonOptions = jsons[json].jsonOptions
                 const jsonObject = jsonParser.parseFileToObject(jsonOptions.filePath)
-                let value = jsonPath.query(jsonObject, jsonOptions.jsonPath)
-                instance[json] = variableDefaultValue(value, jsonOptions.default)
+                if (jsonObject !== undefined){
+                    let value = jsonPath.query(jsonObject, jsonOptions.jsonPath)[0]
+                    instance[json] = variableDefaultValue(value, jsonOptions.default)
+                } else {
+                    instance[json] = jsonOptions.default
+                }
             }
         }
         return instance
