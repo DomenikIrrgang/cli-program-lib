@@ -2,9 +2,11 @@ import { Injectable } from "../decorators/injectable.decorator"
 import { Inject } from "../decorators/inject.decorator"
 import { LogLevel } from "./log-level"
 import { ApplicationConfig } from "../configs/application.config"
+import * as chalk from 'chalk'
 
 @Injectable({
-    global: true
+    global: true,
+    unique: true
 })
 export class Logger {
 
@@ -17,7 +19,9 @@ export class Logger {
                 if (logLevel === LogLevel.DEBUG) {
                     console.log(this.getDebugLoggingMessage(logLevel), ...message)
                 } else if (logLevel === LogLevel.ERROR) {
-                    console.error(this.getLoggingMessage(logLevel), ...message)
+                    console.error(chalk.red(this.getLoggingMessage(logLevel), ...message))
+                } else if (logLevel === LogLevel.WARNING) {
+                    console.warn(chalk.yellow(this.getLoggingMessage(logLevel), ...message))
                 } else {
                     console.log(this.getLoggingMessage(logLevel), ...message)
                 }

@@ -4,14 +4,14 @@ import { ModuleTemplate } from "../templates/module.template";
 
 export abstract class Application extends ApplicationTemplate {
 
-    public run(): void {
+    public async run(): Promise<void> {
         const args = process.argv
         const command = this.findCommand(args[2])
         if (command !== undefined) {
             this.logger.debug("Executing command '" + command.settings.name + "' with arguments: " + args.slice(3).join(", "))
-            command["execute"](args)
+            await command["execute"](args)
         } else {
-            this.logger.error("Command '" + args[2] + "' does not exist!")
+            this.logger.error("Command '" + (args[2] || "") + "' does not exist!")
             this.printHelp()
         }
     }

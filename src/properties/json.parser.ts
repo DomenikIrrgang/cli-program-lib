@@ -12,4 +12,12 @@ export class JsonParser {
         return undefined
     }
 
+    public parseFile(path: string): object {
+        if (existsSync(path) === true) {
+            const data = readFileSync(path).toString().split(/(?:\r\n|\r|\n)/g)
+            return JSON.parse(data.join(""))
+        }
+        return undefined
+    }
+
 }
